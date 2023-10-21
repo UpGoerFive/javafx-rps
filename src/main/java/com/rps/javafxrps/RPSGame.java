@@ -2,13 +2,13 @@ package com.rps.javafxrps;
 
 import java.util.*;
 
-public class RPSController {
+public class RPSGame {
     private static final Map<String, Integer> RPS_TO_INT;
     // Found a couple of interesting constructions for this, using collections.unmodifiablemap might be the "most" immutable, but this is fine.
     static {
         RPS_TO_INT = Map.of("Rock", 0, "Paper", 1, "Scissors", 2);
     }
-    public RPSController(){}
+    public RPSGame(){}
 
     /**
      * Compares the player throw to a randomly generated throw, using ints as
@@ -18,7 +18,6 @@ public class RPSController {
         Random random = new Random();
         int myChoice = random.nextInt(3);
         System.out.println("Computer plays: " + myChoice);
-        System.out.println((oppChoice + 1)%3);
 
         // Return results are the *Player's* result
         if (oppChoice==myChoice){
@@ -39,8 +38,8 @@ public class RPSController {
         return this.rpsResult(oppInt);
     }
 
-    public static void main(String[] args) {
-        RPSController controller = new RPSController();
-        System.out.println("You " + controller.rpsThrow());
-    }
+//    public static void main(String[] args) {
+//        RPSGame controller = new RPSGame();
+//        System.out.println("You " + controller.rpsThrow());
+//    }
 }
